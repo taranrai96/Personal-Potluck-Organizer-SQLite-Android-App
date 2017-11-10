@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Taran Rai & Benjamin Wang on 09/11/17 7:17 PM
+  ~ Copyright (c) 2017. All rights reserved
+  ~
+  ~ Last modified 18/10/17 10:38 AM
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/addEventMaster"
+        android:title="@string/addEventAppBar"
+        android:icon="@drawable/ic_star_white"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/searchEvent"
+        android:title="@string/search_event"
+        android:icon="@drawable/ic_search_white"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/addPledge"
+        android:title="@string/addPledgeAppBar"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:orderInCategory="3"
+        app:showAsAction="ifRoom" />
+
+</menu>

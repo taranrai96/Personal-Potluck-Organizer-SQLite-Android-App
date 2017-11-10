@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Taran Rai on 28/10/17 1:56 PM
+  ~ Copyright (c) 2017. All rights reserved
+  ~
+  ~ Last modified 28/10/17 1:45 PM
+  -->
+
+<resources>
+    <dimen name="table_marginRight">5dp</dimen>
+</resources>

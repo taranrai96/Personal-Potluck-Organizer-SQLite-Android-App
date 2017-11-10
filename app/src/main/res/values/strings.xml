@@ -1,0 +1,47 @@
+<!--
+  ~ Created by Taran Rai & Benjamin Wang on 09/11/17 5:10 PM
+  ~ Copyright (c) 2017. All rights reserved
+  ~
+  ~ Last modified 09/11/17 5:10 PM
+  -->
+
+<resources>
+    <string name="app_name">Rai_Wang</string>
+    <string name="event_master_title1">Name</string>
+    <string name="event_master_title2">Date</string>
+    <string name="event_master_title3">Time</string>
+    <string name="event_master_heading">Event Master Table</string>
+    <string name="updateEventButton">Update Event</string>
+    <string name="deleteButton">Delete</string>
+    <string name="addEventAppBar">Add Event</string>
+    <string name="add_event_master_heading">Add an Event</string>
+    <string name="update_event_master_heading">Update an Event</string>
+    <string name="event_name">Event Name: </string>
+    <string name="event_date">Event Date: </string>
+    <string name="event_time">Event Time: </string>
+    <string name="event_submit_button">Submit Event</string>
+    <string name="event_update_button">Update Event</string>
+    <string name="event_add_success">Event Added</string>
+    <string name="event_update_success">Event Updated</string>
+    <string name="event_delete_success">Event Deleted</string>
+    <string name="event_detail_heading">Event Detail Table</string>
+    <string name="event_detail_title1">Name</string>
+    <string name="event_detail_title2">Unit</string>
+    <string name="event_detail_title3">Quantity</string>
+    <string name="detail_delete_success">Detail Deleted</string>
+    <string name="updateDetailButton">Update Detail</string>
+    <string name="addDetailButton">Add Detail</string>
+    <string name="detail_add_success">Detail Added</string>
+    <string name="add_event_detail_heading">Add a Detail</string>
+    <string name="update_event_detail_heading">Update a Detail</string>
+    <string name="go_to_event_master">Go To Event Master</string>
+    <string name="details_item">Detail Item: </string>
+    <string name="details_unit">Detail Unit: </string>
+    <string name="details_quantity">Detail Quantity: </string>
+    <string name="details_submit_button">Submit Detail</string>
+    <string name="details_update_button">Update Detail</string>
+    <string name="details_show_button">Show values</string>
+    <string name="details_goto_button">Go To Event Details</string>
+    <string name="search_event">Search Event</string>
+    <string name="addPledgeAppBar">Add Pledge</string>
+</resources>
