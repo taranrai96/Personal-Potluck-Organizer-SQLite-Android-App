@@ -181,6 +181,12 @@ public class Contribution extends AppCompatActivity {
                 goToAddContribution.putExtra("detail_id",detailIdNumber);
                 startActivityForResult(goToAddContribution, 1);
                 return true;
+            case R.id.device_info:
+                startActivity(new Intent(this, MyDevice.class));
+                return true;
+            case R.id.about_info:
+                startActivity(new Intent(this, About.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

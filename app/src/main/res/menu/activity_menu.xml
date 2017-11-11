@@ -30,4 +30,14 @@
         android:orderInCategory="3"
         app:showAsAction="ifRoom" />
 
+    <item android:id="@+id/device_info"
+        android:orderInCategory="4"
+        app:showAsAction="never"
+        android:title="@string/device_info" />
+
+    <item android:id="@+id/about_info"
+        android:orderInCategory="5"
+        app:showAsAction="never"
+        android:title="@string/about_info" />
+
 </menu>

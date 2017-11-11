@@ -13,6 +13,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/WHITE</item>
     </style>
 
     <style name="activityHeading">
@@ -35,6 +36,12 @@
     <style name="tableLayout_style">
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+    <style name="device_info">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>

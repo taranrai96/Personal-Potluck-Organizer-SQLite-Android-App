@@ -230,6 +230,12 @@ public class EventDetail extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.device_info:
+                startActivity(new Intent(this, MyDevice.class));
+                return true;
+            case R.id.about_info:
+                startActivity(new Intent(this, About.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -28,7 +28,9 @@
         <activity android:name=".UpdateDetailEvent" />
         <activity android:name=".Contribution" />
         <activity android:name=".AddContribution" />
-        <activity android:name=".EventSearch"></activity>
+        <activity android:name=".EventSearch" />
+        <activity android:name=".MyDevice" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>

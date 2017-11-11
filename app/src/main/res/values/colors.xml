@@ -11,4 +11,5 @@
     <color name="colorPrimaryDark">#388E3C</color>
     <color name="colorAccent">#8BC34A</color>
     <color name="linkColor">#0645AD</color>
+    <color name="WHITE">#FFFFFF</color>
 </resources>

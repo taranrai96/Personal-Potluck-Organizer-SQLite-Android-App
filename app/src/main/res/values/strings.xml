@@ -59,4 +59,16 @@
     <string name="event_search_heading">Event Search</string>
     <string name="search_event_button">Search For Event</string>
     <string name="contribution_overflow">Maximum Allowed Value for Item Reached (Item Fully Pledged)</string>
+    <string name="device_info">My Device</string>
+    <string name="about_info">About</string>
+    <string name="device_info_heading">Device Info</string>
+    <string name="manufacturer_tag">Manufacturer:</string>
+    <string name="model_tag">Model:</string>
+    <string name="version_tag">Version:</string>
+    <string name="version_release_tag">Version Release:</string>
+    <string name="serial_number_tag">Serial Number:</string>
+    <string name="application_name_tag">Application Name:</string>
+    <string name="about_heading">About Us</string>
+    <string name="created_by">Created by Taran Rai and Benjamin Wang</string>
+    <string name="copyright_info">Copyright (c) 2017. All rights reserved</string>
 </resources>

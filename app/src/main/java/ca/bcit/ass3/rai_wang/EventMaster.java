@@ -203,6 +203,13 @@ public class EventMaster extends AppCompatActivity {
                 return true;
             case R.id.searchEvent:
                 startActivityForResult(new Intent(this, EventSearch.class), 1);
+                return true;
+            case R.id.device_info:
+                startActivity(new Intent(this, MyDevice.class));
+                return true;
+            case R.id.about_info:
+                startActivity(new Intent(this, About.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
