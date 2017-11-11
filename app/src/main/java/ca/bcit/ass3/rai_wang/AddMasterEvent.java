@@ -62,4 +62,11 @@ public class AddMasterEvent extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (db != null)
+            db.close();
+    }
 }

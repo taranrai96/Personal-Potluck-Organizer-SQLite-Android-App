@@ -5,43 +5,46 @@
   ~
   ~ Last modified 10/11/17 9:06 PM
   -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/details_linear_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="ca.bcit.ass3.rai_wang.EventSearch">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/event_search_heading"
-        style="@style/activityHeading" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_event_entry" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search_event_button"
-        android:id="@+id/search_event_button"/>
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/event_search_table"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context="ca.bcit.ass3.rai_wang.EventSearch"
-        style="@style/tableLayout_style" >
+        android:id="@+id/details_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="ca.bcit.ass3.rai_wang.EventSearch">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_search_heading"
+            style="@style/activityHeading" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_event_entry" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_event_button"
+            android:id="@+id/search_event_button"/>
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/event_search_table"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:context="ca.bcit.ass3.rai_wang.EventSearch"
+            style="@style/tableLayout_style" >
 
 
-    </TableLayout>
+        </TableLayout>
 
+    </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

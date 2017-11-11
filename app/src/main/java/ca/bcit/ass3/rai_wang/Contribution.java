@@ -201,4 +201,13 @@ public class Contribution extends AppCompatActivity {
             startActivity(getIntent());
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (cursor != null)
+            cursor.close();
+        if (db != null)
+            db.close();
+    }
 }

@@ -5,51 +5,55 @@
   ~
   ~ Last modified 11/11/17 12:23 AM
   -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/details_linear_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="ca.bcit.ass3.rai_wang.MyDevice" >
-
-    <TextView
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/details_linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/device_info_heading"
-        style="@style/activityHeading"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="ca.bcit.ass3.rai_wang.MyDevice" >
 
-    <TextView
-        android:id="@+id/manufacturer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/device_info" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/device_info_heading"
+            style="@style/activityHeading"/>
 
-    <TextView
-        android:id="@+id/model"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/device_info"/>
+        <TextView
+            android:id="@+id/manufacturer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/device_info" />
 
-    <TextView
-        android:id="@+id/version"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/device_info"/>
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/device_info"/>
 
-    <TextView
-        android:id="@+id/version_rel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/device_info"/>
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/device_info"/>
 
-    <TextView
-        android:id="@+id/serial_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/device_info"/>
+        <TextView
+            android:id="@+id/version_rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/device_info"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/serial_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/device_info"/>
 
+    </LinearLayout>
+
+</ScrollView>

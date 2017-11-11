@@ -113,8 +113,9 @@ public class EventDetail extends AppCompatActivity {
 
             count = 1;
             cursor = db.rawQuery("SELECT Name FROM EVENT_MASTER WHERE _eventId = " + eventIdNumber, null);
-            cursor.moveToFirst();
+            if (cursor.moveToFirst()) {
             eventTableName = cursor.getString(0);
+            }
             TextView eventMasterTableName_tv = (TextView) findViewById(R.id.event_master_table_name);
             eventMasterTableName_tv.setText(eventTableName);
             cursor = db.rawQuery("SELECT _detailId, itemName, itemUnit, itemQuantity FROM EVENT_DETAIL WHERE _eventId = " + eventIdNumber, null);
@@ -239,5 +240,14 @@ public class EventDetail extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (cursor != null)
+            cursor.close();
+        if (db != null)
+            db.close();
     }
 }

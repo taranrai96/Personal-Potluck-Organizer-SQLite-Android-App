@@ -69,4 +69,13 @@ public class UpdateDetailEvent extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (cursor != null)
+            cursor.close();
+        if (db != null)
+            db.close();
+    }
 }
