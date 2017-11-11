@@ -12,7 +12,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +21,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -33,7 +31,6 @@ public class EventMaster extends AppCompatActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
     private int count;
-    private Button updatEventButton;
     String eventIdIntent;
     int eventIdNumber;
 
@@ -75,13 +72,11 @@ public class EventMaster extends AppCompatActivity {
             updateHeading_tv.setPadding(15,10,15,15);
             updateHeading_tv.setGravity(Gravity.CENTER);
             updateHeading_tv.setTypeface(null, Typeface.BOLD);
-            //updateHeading_tv.setText("UP");
             TextView deleteHeading_tv = new TextView(this);
             deleteHeading_tv.setTextSize(20);
             deleteHeading_tv.setPadding(15,10,15,15);
             deleteHeading_tv.setGravity(Gravity.CENTER);
             deleteHeading_tv.setTypeface(null, Typeface.BOLD);
-            //deleteHeading_tv.setText("DE");
 
             headingRow.addView(nameHeading_tv);
             headingRow.addView(dateHeading_tv);
@@ -92,6 +87,7 @@ public class EventMaster extends AppCompatActivity {
             count = 1;
             db = helper.getReadableDatabase();
             cursor = db.rawQuery("SELECT _eventId, name, date, time FROM EVENT_MASTER", null);
+
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
                     TableRow row = new TableRow(this);
@@ -174,7 +170,7 @@ public class EventMaster extends AppCompatActivity {
             }
 
         } catch (SQLiteException sqlex) {
-            String msg = "[MainActivity/getEventMaster] DB unavailable";
+            String msg = "[EventMaster/getEventMaster] DB unavailable";
             msg += "\n\n" + sqlex.toString();
             Toast t = Toast.makeText(this, msg, Toast.LENGTH_LONG);
             t.show();
@@ -195,6 +191,8 @@ public class EventMaster extends AppCompatActivity {
         // Inflate the menu. This adds items to the app bar.
         getMenuInflater().inflate(R.menu.activity_menu, menu);
 
+        menu.findItem(R.id.addPledge).setVisible(false);
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -204,6 +202,8 @@ public class EventMaster extends AppCompatActivity {
             case R.id.addEventMaster:
                 startActivityForResult(new Intent(this, AddMasterEvent.class), 1);
                 return true;
+            case R.id.searchEvent:
+                startActivity(new Intent(this, EventSearch.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

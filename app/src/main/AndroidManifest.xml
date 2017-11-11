@@ -25,7 +25,10 @@
         <activity android:name=".EventDetail" />
         <activity android:name=".UpdateMasterEvent" />
         <activity android:name=".AddMasterEvent" />
-        <activity android:name=".UpdateDetailEvent"></activity>
+        <activity android:name=".UpdateDetailEvent" />
+        <activity android:name=".Contribution" />
+        <activity android:name=".AddContribution" />
+        <activity android:name=".EventSearch"></activity>
     </application>
 
 </manifest>

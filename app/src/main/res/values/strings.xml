@@ -44,4 +44,18 @@
     <string name="details_goto_button">Go To Event Details</string>
     <string name="search_event">Search Event</string>
     <string name="addPledgeAppBar">Add Pledge</string>
+    <string name="contribution_heading">Contribution</string>
+    <string name="addContributionButton">Add Pledge</string>
+    <string name="contribution_title1">Name</string>
+    <string name="contribution_title2">Quantity</string>
+    <string name="contribution_title3">Date</string>
+    <string name="add_contribution_heading">Add a Pledge</string>
+    <string name="contribution_name">Your Name:</string>
+    <string name="contribution_quantity">Pledge Quantity:</string>
+    <string name="contribution_date">Pledge Date:</string>
+    <string name="contribution_submit_button">Submit Pledge</string>
+    <string name="contribution_delete_success">Pledge Deleted</string>
+    <string name="contribution_add_success">Pledge Added</string>
+    <string name="event_search_heading">Event Search</string>
+    <string name="search_event_button">Search For Event</string>
 </resources>
