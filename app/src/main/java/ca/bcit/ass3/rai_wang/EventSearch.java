@@ -173,7 +173,6 @@ public class EventSearch extends AppCompatActivity {
                         count++;
                     }
                 }
-
             }
         });
     }

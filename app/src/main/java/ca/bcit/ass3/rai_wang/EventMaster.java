@@ -188,7 +188,6 @@ public class EventMaster extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu. This adds items to the app bar.
         getMenuInflater().inflate(R.menu.activity_menu, menu);
 
         menu.findItem(R.id.addPledge).setVisible(false);
