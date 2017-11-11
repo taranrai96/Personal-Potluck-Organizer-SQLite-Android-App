@@ -57,29 +57,29 @@ public class Contribution extends AppCompatActivity {
             headingRow.setLayoutParams(headingLp);
 
             TextView nameHeading_tv = new TextView(this);
-            nameHeading_tv.setTextSize(20);
-            nameHeading_tv.setPadding(15,10,15,15);
+            nameHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            nameHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             nameHeading_tv.setGravity(Gravity.CENTER);
             nameHeading_tv.setTypeface(null, Typeface.BOLD);
             nameHeading_tv.setText(getResources().getString(R.string.contribution_title1));
 
             TextView quantityHeading_tv = new TextView(this);
-            quantityHeading_tv.setTextSize(20);
-            quantityHeading_tv.setPadding(15,10,15,15);
+            quantityHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            quantityHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             quantityHeading_tv.setGravity(Gravity.CENTER);
             quantityHeading_tv.setTypeface(null, Typeface.BOLD);
             quantityHeading_tv.setText(getResources().getString(R.string.contribution_title2));
 
             TextView dateHeading_tv = new TextView(this);
-            dateHeading_tv.setTextSize(20);
-            dateHeading_tv.setPadding(15,10,15,15);
+            dateHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            dateHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             dateHeading_tv.setGravity(Gravity.CENTER);
             dateHeading_tv.setTypeface(null, Typeface.BOLD);
             dateHeading_tv.setText(getResources().getString(R.string.contribution_title3));
 
             TextView deleteHeading_tv = new TextView(this);
-            deleteHeading_tv.setTextSize(20);
-            deleteHeading_tv.setPadding(15,10,15,15);
+            deleteHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            deleteHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             deleteHeading_tv.setGravity(Gravity.CENTER);
             deleteHeading_tv.setTypeface(null, Typeface.BOLD);
 
@@ -87,16 +87,16 @@ public class Contribution extends AppCompatActivity {
             headingRow.addView(quantityHeading_tv);
             headingRow.addView(dateHeading_tv);
             headingRow.addView(deleteHeading_tv);
-            tableLayout.addView(headingRow,0);
-            count = 1;
+            tableLayout.addView(headingRow,getResources().getInteger(R.integer.number_0));
+            count = getResources().getInteger(R.integer.number_1);
             db = helper.getReadableDatabase();
 
             cursor = db.rawQuery("SELECT itemName FROM EVENT_DETAIL WHERE _detailId = " + detailIdNumber, null);
             cursor.moveToFirst();
-            detailTableName = cursor.getString(0);
+            detailTableName = cursor.getString(getResources().getInteger(R.integer.number_0));
             cursor = db.rawQuery("SELECT Name FROM EVENT_MASTER WHERE _eventId = " + eventIdNumber, null);
             cursor.moveToFirst();
-            eventTableName = cursor.getString(0);
+            eventTableName = cursor.getString(getResources().getInteger(R.integer.number_0));
             TextView eventDetailTableName_tv = (TextView) findViewById(R.id.event_detail_table_name);
             eventDetailTableName_tv.setText(detailTableName + " - " + eventTableName);
 
@@ -110,29 +110,29 @@ public class Contribution extends AppCompatActivity {
                     TableRow row= new TableRow(this);
                     TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
                             TableRow.LayoutParams.WRAP_CONTENT);
-                    lp.setMargins(10,10,10,10);
+                    lp.setMargins(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10));
                     row.setLayoutParams(lp);
 
                     TextView contName_tv = new TextView(this);
-                    contName_tv.setPadding(15,15,15,15);
+                    contName_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     contName_tv.setBackgroundResource(R.drawable.border);
 
                     TextView contQuantity_tv = new TextView(this);
-                    contQuantity_tv.setPadding(15,15,15,15);
+                    contQuantity_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     contQuantity_tv.setBackgroundResource(R.drawable.border);
 
                     TextView contDate_tv = new TextView(this);
-                    contDate_tv.setPadding(15,15,15,15);
+                    contDate_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     contDate_tv.setBackgroundResource(R.drawable.border);
 
-                    contName_tv.setText(cursor.getString(1));
-                    contQuantity_tv.setText(cursor.getString(2));
-                    contDate_tv.setText(cursor.getString(3));
+                    contName_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_1)));
+                    contQuantity_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_2)));
+                    contDate_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_3)));
 
-                    final int delete_id = cursor.getInt(0);
+                    final int delete_id = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     final ImageView deleteImage = new ImageView(this);
                     deleteImage.setImageResource(R.drawable.deletebutton);
-                    deleteImage.setPadding(10,0,10,0);
+                    deleteImage.setPadding(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0));
                     deleteImage.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             String deleteEventQuery = "DELETE FROM CONTRIBUTION WHERE _contributionId = " + delete_id;
@@ -179,7 +179,7 @@ public class Contribution extends AppCompatActivity {
                 Intent goToAddContribution = new Intent (Contribution.this, AddContribution.class);
                 goToAddContribution.putExtra("event_id",eventIdNumber);
                 goToAddContribution.putExtra("detail_id",detailIdNumber);
-                startActivityForResult(goToAddContribution, 1);
+                startActivityForResult(goToAddContribution, getResources().getInteger(R.integer.number_1));
                 return true;
             case R.id.device_info:
                 startActivity(new Intent(this, MyDevice.class));
@@ -196,7 +196,7 @@ public class Contribution extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
 
-        if (requestCode == 1 || requestCode == 0) {
+        if (requestCode == getResources().getInteger(R.integer.number_1) || requestCode == getResources().getInteger(R.integer.number_0)) {
             finish();
             startActivity(getIntent());
         }

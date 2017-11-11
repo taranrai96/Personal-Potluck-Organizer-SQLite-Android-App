@@ -34,11 +34,11 @@ public class UpdateMasterEvent extends AppCompatActivity {
         cursor = db.rawQuery("SELECT Name, Date, Time FROM EVENT_MASTER WHERE _eventId = " + selected_event_id, null);
         cursor.moveToFirst();
         EditText eventName_et = (EditText) findViewById(R.id.event_name);
-        eventName_et.setText(cursor.getString(0));
+        eventName_et.setText(cursor.getString(getResources().getInteger(R.integer.number_0)));
         EditText eventDate_et = (EditText) findViewById(R.id.event_date);
-        eventDate_et.setText(cursor.getString(1));
+        eventDate_et.setText(cursor.getString(getResources().getInteger(R.integer.number_1)));
         EditText eventTime_et = (EditText) findViewById(R.id.event_time);
-        eventTime_et.setText(cursor.getString(2));
+        eventTime_et.setText(cursor.getString(getResources().getInteger(R.integer.number_2)));
 
         Button updateEvent = (Button) findViewById(R.id.event_update_button);
         updateEvent.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +69,7 @@ public class UpdateMasterEvent extends AppCompatActivity {
             }
         });
     }
-
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();

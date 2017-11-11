@@ -53,19 +53,19 @@ public class AddContribution extends AppCompatActivity {
 
                     cursor = db.rawQuery("SELECT itemName FROM EVENT_DETAIL WHERE _detailId = " + detailIdNumber, null);
                     cursor.moveToFirst();
-                    String itemName_cont = cursor.getString(0);
+                    String itemName_cont = cursor.getString(getResources().getInteger(R.integer.number_0));
                     cursor = db.rawQuery("SELECT sum(c.Quantity) FROM CONTRIBUTION c " +
                     "INNER JOIN EVENT_DETAIL ed ON c._detailId = ed._detailId " +
                             "INNER JOIN EVENT_MASTER em ON ed._eventId = em._eventId " +
                             "WHERE c._detailId = " + detailIdNumber + " AND " +
                             "ed._eventId = " + eventIdNumber + " AND ed.itemName = \'" + itemName_cont + "\'", null);
                     cursor.moveToFirst();
-                    initialSumQuant = cursor.getInt(0);
+                    initialSumQuant = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     contQuantity_integer = Integer.parseInt(contQuantity);
                     sum_init_cur = initialSumQuant + contQuantity_integer;
                     cursor = db.rawQuery("SELECT itemQuantity FROM EVENT_DETAIL WHERE _detailId = " + detailIdNumber, null);
                     cursor.moveToFirst();
-                    itemQuantity_allowed = cursor.getInt(0);
+                    itemQuantity_allowed = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     if(sum_init_cur <= itemQuantity_allowed) {
                     String insertQuery = "INSERT INTO CONTRIBUTION(Name, Quantity, Date, _detailId) VALUES (\'" + contName + "\',\'" + contQuantity + "\',\'" + contDate + "\',\'" + detailIdNumber + "\')";
                     db.execSQL(insertQuery);

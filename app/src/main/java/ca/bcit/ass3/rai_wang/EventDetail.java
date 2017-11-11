@@ -50,7 +50,7 @@ public class EventDetail extends AppCompatActivity {
         goToEventMaster.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent goToEventMaster = new Intent(EventDetail.this,EventMaster.class);
-                startActivityForResult(goToEventMaster, 1);
+                startActivityForResult(goToEventMaster, getResources().getInteger(R.integer.number_1));
             }
         });
         Button addDetailButton = (Button) findViewById(R.id.add_detail_button);
@@ -58,7 +58,7 @@ public class EventDetail extends AppCompatActivity {
             public void onClick(View view) {
                 Intent goToAddDetailEvent = new Intent(EventDetail.this,AddDetailEvent.class);
                 goToAddDetailEvent.putExtra("event_id",eventIdNumber);
-                startActivityForResult(goToAddDetailEvent, 1);
+                startActivityForResult(goToAddDetailEvent, getResources().getInteger(R.integer.number_1));
             }
         });
         helper = new PotluckDbHelper(this);
@@ -72,35 +72,35 @@ public class EventDetail extends AppCompatActivity {
             headingRow.setLayoutParams(headingLp);
 
             TextView nameHeading_tv = new TextView(this);
-            nameHeading_tv.setTextSize(20);
-            nameHeading_tv.setPadding(15,10,15,15);
+            nameHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            nameHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             nameHeading_tv.setGravity(Gravity.CENTER);
             nameHeading_tv.setTypeface(null, Typeface.BOLD);
             nameHeading_tv.setText(getResources().getString(R.string.event_detail_title1));
 
             TextView dateHeading_tv = new TextView(this);
-            dateHeading_tv.setTextSize(20);
-            dateHeading_tv.setPadding(15,10,15,15);
+            dateHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            dateHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             dateHeading_tv.setGravity(Gravity.CENTER);
             dateHeading_tv.setTypeface(null, Typeface.BOLD);
             dateHeading_tv.setText(getResources().getString(R.string.event_detail_title2));
 
             TextView timeHeading_tv = new TextView(this);
-            timeHeading_tv.setTextSize(20);
-            timeHeading_tv.setPadding(15,10,15,15);
+            timeHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            timeHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             timeHeading_tv.setGravity(Gravity.CENTER);
             timeHeading_tv.setTypeface(null, Typeface.BOLD);
             timeHeading_tv.setText(getResources().getString(R.string.event_detail_title3));
 
             TextView updateHeading_tv = new TextView(this);
-            updateHeading_tv.setTextSize(20);
-            updateHeading_tv.setPadding(15,10,15,15);
+            updateHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            updateHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             updateHeading_tv.setGravity(Gravity.CENTER);
             updateHeading_tv.setTypeface(null, Typeface.BOLD);
 
             TextView deleteHeading_tv = new TextView(this);
-            deleteHeading_tv.setTextSize(20);
-            deleteHeading_tv.setPadding(15,10,15,15);
+            deleteHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            deleteHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             deleteHeading_tv.setGravity(Gravity.CENTER);
             deleteHeading_tv.setTypeface(null, Typeface.BOLD);
 
@@ -109,12 +109,12 @@ public class EventDetail extends AppCompatActivity {
             headingRow.addView(timeHeading_tv);
             headingRow.addView(updateHeading_tv);
             headingRow.addView(deleteHeading_tv);
-            tableLayout.addView(headingRow,0);
+            tableLayout.addView(headingRow,getResources().getInteger(R.integer.number_0));
 
-            count = 1;
+            count = getResources().getInteger(R.integer.number_1);
             cursor = db.rawQuery("SELECT Name FROM EVENT_MASTER WHERE _eventId = " + eventIdNumber, null);
             if (cursor.moveToFirst()) {
-            eventTableName = cursor.getString(0);
+            eventTableName = cursor.getString(getResources().getInteger(R.integer.number_0));
             }
             TextView eventMasterTableName_tv = (TextView) findViewById(R.id.event_master_table_name);
             eventMasterTableName_tv.setText(eventTableName);
@@ -125,13 +125,13 @@ public class EventDetail extends AppCompatActivity {
                     TableRow row= new TableRow(this);
                     TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
                             TableRow.LayoutParams.WRAP_CONTENT);
-                    lp.setMargins(10,10,10,10);
+                    lp.setMargins(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_10));
                     row.setLayoutParams(lp);
 
                     final TextView itemId_tv = new TextView(this);
 
                     TextView itemName_tv = new TextView(this);
-                    itemName_tv.setPadding(15,15,15,15);
+                    itemName_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     itemName_tv.setBackgroundResource(R.drawable.border);
                     itemName_tv.setClickable(true);
                     itemName_tv.setTypeface(null, Typeface.BOLD);
@@ -139,17 +139,17 @@ public class EventDetail extends AppCompatActivity {
                     itemName_tv.setTextColor(getResources().getColor(R.color.linkColor));
 
                     TextView itemUnit_tv = new TextView(this);
-                    itemUnit_tv.setPadding(15,15,15,15);
+                    itemUnit_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     itemUnit_tv.setBackgroundResource(R.drawable.border);
 
                     TextView itemQuantity_tv = new TextView(this);
-                    itemQuantity_tv.setPadding(15,15,15,15);
+                    itemQuantity_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     itemQuantity_tv.setBackgroundResource(R.drawable.border);
 
-                    itemId_tv.setText(cursor.getString(0));
-                    itemName_tv.setText(cursor.getString(1));
-                    itemUnit_tv.setText(cursor.getString(2));
-                    itemQuantity_tv.setText(cursor.getString(3));
+                    itemId_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_0)));
+                    itemName_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_1)));
+                    itemUnit_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_2)));
+                    itemQuantity_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_3)));
 
                     itemName_tv.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
@@ -162,10 +162,10 @@ public class EventDetail extends AppCompatActivity {
                         }
                     });
 
-                    final int delete_id = cursor.getInt(0);
+                    final int delete_id = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     final ImageView deleteImage = new ImageView(this);
                     deleteImage.setImageResource(R.drawable.deletebutton);
-                    deleteImage.setPadding(10,0,10,0);
+                    deleteImage.setPadding(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0));
                     deleteImage.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             String deleteEventQuery = "DELETE FROM EVENT_DETAIL WHERE _detailId = " + delete_id;
@@ -177,15 +177,15 @@ public class EventDetail extends AppCompatActivity {
                         }
                     });
 
-                    final int update_id = cursor.getInt(0);
+                    final int update_id = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     final ImageView updateImage = new ImageView(this);
                     updateImage.setImageResource(R.drawable.updatebutton);
-                    updateImage.setPadding(10,0,0,0);
+                    updateImage.setPadding(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.number_0));
                     updateImage.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             Intent goToUpdateMasterEvent = new Intent(EventDetail.this, UpdateDetailEvent.class);
                             goToUpdateMasterEvent.putExtra("detail_id",update_id);
-                            startActivityForResult(goToUpdateMasterEvent, 1);
+                            startActivityForResult(goToUpdateMasterEvent, getResources().getInteger(R.integer.number_1));
                         }
                     });
 
@@ -211,7 +211,7 @@ public class EventDetail extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
 
-        if (requestCode == 1 || requestCode == 0) {
+        if (requestCode == getResources().getInteger(R.integer.number_1) || requestCode == getResources().getInteger(R.integer.number_0)) {
             finish();
             startActivity(getIntent());
         }

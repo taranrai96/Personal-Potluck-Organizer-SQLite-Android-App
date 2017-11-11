@@ -50,31 +50,31 @@ public class EventMaster extends AppCompatActivity {
                     TableRow.LayoutParams.WRAP_CONTENT);
             headingRow.setLayoutParams(headingLp);
             TextView nameHeading_tv = new TextView(this);
-            nameHeading_tv.setTextSize(20);
-            nameHeading_tv.setPadding(15,10,15,15);
+            nameHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            nameHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             nameHeading_tv.setGravity(Gravity.CENTER);
             nameHeading_tv.setTypeface(null, Typeface.BOLD);
             nameHeading_tv.setText(getResources().getString(R.string.event_master_title1));
             TextView dateHeading_tv = new TextView(this);
-            dateHeading_tv.setTextSize(20);
-            dateHeading_tv.setPadding(15,10,15,15);
+            dateHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            dateHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             dateHeading_tv.setGravity(Gravity.CENTER);
             dateHeading_tv.setTypeface(null, Typeface.BOLD);
             dateHeading_tv.setText(getResources().getString(R.string.event_master_title2));
             TextView timeHeading_tv = new TextView(this);
-            timeHeading_tv.setTextSize(20);
-            timeHeading_tv.setPadding(15,10,15,15);
+            timeHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            timeHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             timeHeading_tv.setGravity(Gravity.CENTER);
             timeHeading_tv.setTypeface(null, Typeface.BOLD);
             timeHeading_tv.setText(getResources().getString(R.string.event_master_title3));
             TextView updateHeading_tv = new TextView(this);
-            updateHeading_tv.setTextSize(20);
-            updateHeading_tv.setPadding(15,10,15,15);
+            updateHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            updateHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             updateHeading_tv.setGravity(Gravity.CENTER);
             updateHeading_tv.setTypeface(null, Typeface.BOLD);
             TextView deleteHeading_tv = new TextView(this);
-            deleteHeading_tv.setTextSize(20);
-            deleteHeading_tv.setPadding(15,10,15,15);
+            deleteHeading_tv.setTextSize(getResources().getInteger(R.integer.text_size_20));
+            deleteHeading_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
             deleteHeading_tv.setGravity(Gravity.CENTER);
             deleteHeading_tv.setTypeface(null, Typeface.BOLD);
 
@@ -83,8 +83,8 @@ public class EventMaster extends AppCompatActivity {
             headingRow.addView(timeHeading_tv);
             headingRow.addView(deleteHeading_tv);
             headingRow.addView(updateHeading_tv);
-            tableLayout.addView(headingRow,0);
-            count = 1;
+            tableLayout.addView(headingRow,getResources().getInteger(R.integer.number_0));
+            count = getResources().getInteger(R.integer.number_1);
             db = helper.getReadableDatabase();
             cursor = db.rawQuery("SELECT _eventId, name, date, time FROM EVENT_MASTER", null);
 
@@ -98,7 +98,7 @@ public class EventMaster extends AppCompatActivity {
                     final TextView eventId_tv = new TextView(this);
 
                     TextView eventName_tv = new TextView(this);
-                    eventName_tv.setPadding(15,15,15,15);
+                    eventName_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     eventName_tv.setGravity(Gravity.CENTER);
                     eventName_tv.setBackgroundResource(R.drawable.border);
                     eventName_tv.setClickable(true);
@@ -107,19 +107,19 @@ public class EventMaster extends AppCompatActivity {
                     eventName_tv.setTextColor(getResources().getColor(R.color.linkColor));
 
                     TextView eventDate_tv = new TextView(this);
-                    eventDate_tv.setPadding(15,15,15,15);
+                    eventDate_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     eventDate_tv.setGravity(Gravity.CENTER);
                     eventDate_tv.setBackgroundResource(R.drawable.border);
 
                     TextView eventTime_tv = new TextView(this);
-                    eventTime_tv.setPadding(15,15,15,15);
+                    eventTime_tv.setPadding(getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15),getResources().getInteger(R.integer.padding_15));
                     eventTime_tv.setGravity(Gravity.CENTER);
                     eventTime_tv.setBackgroundResource(R.drawable.border);
 
-                    eventId_tv.setText(cursor.getString(0));
-                    eventName_tv.setText(cursor.getString(1));
-                    eventDate_tv.setText(cursor.getString(2));
-                    eventTime_tv.setText(cursor.getString(3));
+                    eventId_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_0)));
+                    eventName_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_1)));
+                    eventDate_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_2)));
+                    eventTime_tv.setText(cursor.getString(getResources().getInteger(R.integer.number_3)));
 
                     eventName_tv.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
@@ -131,10 +131,10 @@ public class EventMaster extends AppCompatActivity {
                         }
                     });
 
-                    final int delete_id = cursor.getInt(0);
+                    final int delete_id = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     final ImageView deleteImage = new ImageView(this);
                     deleteImage.setImageResource(R.drawable.deletebutton);
-                    deleteImage.setPadding(10,0,10,0);
+                    deleteImage.setPadding(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0));
                     deleteImage.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             String deleteEventQuery = "DELETE FROM EVENT_MASTER WHERE _eventId = " + delete_id;
@@ -146,15 +146,15 @@ public class EventMaster extends AppCompatActivity {
                         }
                     });
 
-                    final int update_id = cursor.getInt(0);
+                    final int update_id = cursor.getInt(getResources().getInteger(R.integer.number_0));
                     final ImageView updateImage = new ImageView(this);
                     updateImage.setImageResource(R.drawable.updatebutton);
-                    updateImage.setPadding(10,0,0,0);
+                    updateImage.setPadding(getResources().getInteger(R.integer.padding_10),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.number_0),getResources().getInteger(R.integer.number_0));
                     updateImage.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             Intent goToUpdateMasterEvent = new Intent(EventMaster.this, UpdateMasterEvent.class);
                             goToUpdateMasterEvent.putExtra("event_id",update_id);
-                            startActivityForResult(goToUpdateMasterEvent, 1);
+                            startActivityForResult(goToUpdateMasterEvent, getResources().getInteger(R.integer.number_1));
                         }
                     });
 
@@ -199,10 +199,10 @@ public class EventMaster extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.addEventMaster:
-                startActivityForResult(new Intent(this, AddMasterEvent.class), 1);
+                startActivityForResult(new Intent(this, AddMasterEvent.class), getResources().getInteger(R.integer.number_1));
                 return true;
             case R.id.searchEvent:
-                startActivityForResult(new Intent(this, EventSearch.class), 1);
+                startActivityForResult(new Intent(this, EventSearch.class), getResources().getInteger(R.integer.number_1));
                 return true;
             case R.id.device_info:
                 startActivity(new Intent(this, MyDevice.class));
@@ -219,7 +219,7 @@ public class EventMaster extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
 
-        if (requestCode == 1 || requestCode == 0) {
+        if (requestCode == getResources().getInteger(R.integer.number_1) || requestCode == getResources().getInteger(R.integer.number_0)) {
             finish();
             startActivity(getIntent());
         }

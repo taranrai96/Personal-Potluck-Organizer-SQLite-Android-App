@@ -34,11 +34,11 @@ public class UpdateDetailEvent extends AppCompatActivity {
         cursor = db.rawQuery("SELECT itemName, itemUnit, itemQuantity FROM EVENT_DETAIL WHERE _detailId = " + selected_detail_id, null);
         cursor.moveToFirst();
         EditText itemName_et = (EditText) findViewById(R.id.details_item);
-        itemName_et.setText(cursor.getString(0));
+        itemName_et.setText(cursor.getString(getResources().getInteger(R.integer.number_0)));
         EditText itemUnit_et = (EditText) findViewById(R.id.details_unit);
-        itemUnit_et.setText(cursor.getString(1));
+        itemUnit_et.setText(cursor.getString(getResources().getInteger(R.integer.number_1)));
         EditText itemQuantity_et = (EditText) findViewById(R.id.details_quantity);
-        itemQuantity_et.setText(cursor.getString(2));
+        itemQuantity_et.setText(cursor.getString(getResources().getInteger(R.integer.number_2)));
 
         Button updateDetail = (Button) findViewById(R.id.details_update_button);
         updateDetail.setOnClickListener(new View.OnClickListener() {

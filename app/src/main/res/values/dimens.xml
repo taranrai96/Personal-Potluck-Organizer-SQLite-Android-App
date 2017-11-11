@@ -8,4 +8,12 @@
 
 <resources>
     <dimen name="table_marginRight">5dp</dimen>
+    <integer name="text_size_20">20</integer>
+    <integer name="padding_10">10</integer>
+    <integer name="padding_15">15</integer>
+    <integer name="number_0">0</integer>
+    <integer name="number_1">1</integer>
+    <integer name="number_2">2</integer>
+    <integer name="number_3">3</integer>
+    <integer name="number_4">4</integer>
 </resources>
